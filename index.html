@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directorio Ejecutivo de Hojas de Vida</title>
+
+  <!-- Fuente moderna: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Iconos -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Estilos Centrales -->
+  <link rel="stylesheet" href="Style.css">
+  
+  <!-- Librería de Exportación PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+  <!-- Elemento Decorativo para el Glassmorphism -->
+  <div class="blob shape-1"></div>
+  <div class="blob shape-2"></div>
+  
+  <div class="app-container fade-in">
+    <!-- Panel Izquierdo: Lista y Controles -->
+    <aside class="sidebar glass-panel">
+      <div class="sidebar-header">
+        <div class="icon-brand">
+          <i class="ri-folder-user-fill"></i>
+        </div>
+        <h2>Directorio HV</h2>
+      </div>
+
+      <div class="search-box">
+        <i class="ri-search-line search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Buscar por Nombre o CC...">
+      </div>
+
+      <div class="actions-group">
+        <button id="btnDescargarSeleccionados" class="btn btn-secondary" title="Descarga seleccionados en checkbox">
+          <i class="ri-file-download-line"></i> Lote
+        </button>
+        <button id="btnDescargarTodo" class="btn btn-primary" title="Precaución: Descarga todo el listado">
+          <i class="ri-database-2-line"></i> Todo
+        </button>
+      </div>
+
+      <div class="list-container">
+        <ul id="candidatosList" class="candidatos-list">
+          <div class="loading-state">
+            <div class="spinner"></div>
+            <p>Conectando con Servidor...</p>
+          </div>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Panel Derecho: Visualizador de Hoja de Vida -->
+    <main class="main-content glass-panel" id="cvPanel">
+       
+       <div class="empty-state" id="emptyState">
+          <i class="ri-article-line"></i>
+          <p>Selecciona un candidato para desplegar su información técnica</p>
+       </div>
+       
+       <div id="cvContent" class="cv-wrapper hidden fade-in">
+          <!-- Botón de Descarga Individual -->
+          <div class="cv-header-actions">
+             <button id="btnDescargarPDF" class="btn btn-accent pulse-btn">
+               <i class="ri-file-pdf-2-line"></i> Exportar HV
+             </button>
+          </div>
+          
+          <!-- Lienzo a convertir en PDF -->
+          <div class="scroll-canvas">
+            <div id="cvPrintableArea" class="cv-printable-area">
+                <!-- Data inyectada dinámicamente -->
+            </div>
+          </div>
+       </div>
+
+    </main>
+  </div>
+
+  <script src="Script.js"></script>
+</body>
+</html>
