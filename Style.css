@@ -316,3 +316,103 @@ body {
     font-weight: bold;
     letter-spacing: 2px;
 }
+
+/* ========================================================
+   RESPONSIVE DESIGN (MOBILE & TABLETS)
+   ======================================================== */
+@media screen and (max-width: 1024px) {
+  body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: auto;
+  }
+  
+  .app-container {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    gap: 20px;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-height: 450px; /* Permite ver la lista y hacer scroll en móvil */
+    padding: 20px;
+  }
+
+  .main-content {
+    width: 100%;
+    min-height: 80vh;
+  }
+
+  .scroll-canvas {
+    padding: 10px;
+  }
+
+  .cv-printable-area {
+    padding: 20px 10px;
+    border-radius: 20px;
+  }
+
+  .hv-container {
+    padding: 25px;
+    border-radius: 20px;
+  }
+
+  .hv-glass-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .hv-logo-glass {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .hv-header-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hv-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hv-experience-card {
+    flex-direction: column;
+  }
+
+  .hv-time-stat {
+    border-left: none;
+    border-top: 1px dashed rgba(255, 255, 255, 0.3);
+    padding-left: 0;
+    margin-left: 0;
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+  
+  .hv-years-num {
+    font-size: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sidebar-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .actions-group {
+    flex-direction: column;
+  }
+  
+  .hv-container {
+    padding: 15px;
+  }
+  
+  .hv-header-text h1 {
+    font-size: 1.8rem;
+  }
+}
+
